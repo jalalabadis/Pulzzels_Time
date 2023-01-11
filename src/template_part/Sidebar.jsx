@@ -35,7 +35,11 @@ render(){
     <ul className="nav flex-column" id="nav_accordion">
         <li className="nav-item">
             <div className="search_backgrounds">
-                <img src="assest/img/search_ico.svg" alt=""/>    <input type="text" placeholder="Search..."/>
+                <img src="assest/img/search_ico.svg" alt=""/>  
+                  <input 
+                  type="text" 
+                  onChange={e=>"d"}
+                  placeholder="Search..."/>
                 </div>
         </li>
         <br/>
@@ -61,7 +65,7 @@ render(){
          {this.state.catagoryData.map((row, index)=>{
             return(
                 <ul className="submenu collapse show" key={index}>
-                <li><Link className="nav-link" to={''}>{row.Name}</Link></li>
+                <li><Link className="nav-link" to={'/category/'+row.ID}>{row.Name}</Link></li>
                 
             </ul>
             )

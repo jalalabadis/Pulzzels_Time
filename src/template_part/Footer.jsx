@@ -65,11 +65,11 @@ function Footer() {
         </div>
         <div className="col-md-4 mx-auto">
             <div className="socials-icolisty">
-           <Link to={""}><img src="assest/img/fb.svg" alt=''/></Link > 
-          <Link to={""}><img src="assest/img/twitter.svg" alt=''/></Link >  
-           <Link to={""}><img src="assest/img/wats.svg" alt=''/></Link > 
-           <Link to={""}><img src="assest/img/printest.svg" alt=''/></Link > 
-           <Link to={""}><img src="assest/img/emails.svg" alt=''/></Link > 
+           <Link to={""}><img src="/assest/img/fb.svg" alt=''/></Link > 
+          <Link to={""}><img src="/assest/img/twitter.svg" alt=''/></Link >  
+           <Link to={""}><img src="/assest/img/wats.svg" alt=''/></Link > 
+           <Link to={""}><img src="/assest/img/printest.svg" alt=''/></Link > 
+           <Link to={""}><img src="/assest/img/emails.svg" alt=''/></Link > 
             
             </div>
         </div>

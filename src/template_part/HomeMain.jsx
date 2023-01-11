@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { getDatabase, onValue, ref } from 'firebase/database';
+import { Link } from 'react-router-dom';
 
 
 const db = getDatabase();
@@ -161,12 +162,14 @@ return(
 {this.state.CatagoryDatas.map((row, index)=>{
 return(
   <div className="col-md-4" key={index}>
+    <Link to={'/category/'+row.ID}>
 <div className="card">
 <div className="card-hader-catgoryesds">
 <i className="bi bi-grid-1x2-fill"></i>    <p>{row.Name}</p>
 </div>
 <img className="card-img2" src={row.Thumbnail} alt="succulent"/>
 </div>
+</Link>
 </div>
 )
 })}

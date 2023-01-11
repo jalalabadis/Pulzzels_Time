@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import {getStorage, ref as ref_storage, uploadBytes, getDownloadURL} from  "firebase/storage";
 import { getDatabase, ref as ref_database, set } from 'firebase/database';
-
+import CatagoryOption from '../../hook/CatagoryOption';
 
 function Create() {
 const [catagoryImg, setCatagoryImg] = React.useState();
@@ -10,6 +10,7 @@ const [catagoryName, setCatagoryName] = React.useState('');
 const [catagoryButton, setcatagoryButton] = React.useState(false);
 
 const [gameImg, setGameImg] = React.useState();
+const [gameCategory, setCategory] = React.useState('');
 const [gameName, setGameName] = React.useState('');
 const [gameDescription, setGameDescriptio] = React.useState('');
 const [gameButton, setgameButton] = React.useState(false);
@@ -50,6 +51,7 @@ uploadBytes(storageRef, gameImg).then(snapshot=>{
 getDownloadURL(storageRef).then(url =>{
 set(ref_database(db, 'Games/'+Ms), {
 Name: gameName,
+Category: gameCategory,
 Description: gameDescription,
 Thumbnail: url,
 ID: Ms,
@@ -96,6 +98,13 @@ setGameDescriptio('')
         type="file" 
         onChange={(e)=> setGameImg(e.target.files[0])}
         accept="image/*" /><br />
+        <select 
+        className="form-select" 
+        onChange={e=> setCategory(e.target.value)}
+        >
+        <option value=''>Select Category</option>
+        <CatagoryOption/>
+        </select> <br />
         <input 
         className='form-control' 
         type="text"
@@ -108,7 +117,7 @@ setGameDescriptio('')
         onChange={e=> setGameDescriptio(e.target.value)}
         cols="30" rows="10" 
         placeholder='Description'></textarea> <br />
-        <button className={gameButton===true? 'btn btn-primary disabled' : gameImg!==undefined&&gameName!==''&&gameDescription!=='' ?'btn btn-primary' : 'btn btn-primary disabled' } onClick={Submit_games}>{gameButton===true?<i className='bi bi-arrow-repeat'>Submited</i> : 'Submit'}</button>
+        <button className={gameButton===true? 'btn btn-primary disabled' : gameImg!==undefined&&gameCategory!==''&&gameName!==''&&gameDescription!=='' ?'btn btn-primary' : 'btn btn-primary disabled' } onClick={Submit_games}>{gameButton===true?<i className='bi bi-arrow-repeat'>Submited</i> : 'Submit'}</button>
 
 </div>
 

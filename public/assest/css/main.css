@@ -110,6 +110,28 @@ font-style: normal;
 font-weight: 600;
 font-size: 13px;
 line-height: 22px;
+z-index: 999;
+}
+
+.card-img-overlay{
+    z-index: 1;
+}
+
+.float-righttexfg{
+width: auto;
+height: auto;
+padding: 4px;
+right: 14px;
+top: calc(50% - 32px/2 - 110px);
+background: rgba(246, 247, 242, 0.1);
+backdrop-filter: blur(3px);
+border-radius: 2px;
+overflow: hidden;
+
+}
+
+.float-righttexfg img{
+    margin: 0px 6px 4px;
 }
 
 .play-button-plopp2{
@@ -132,6 +154,7 @@ line-height: 22px;
 
 .card-footer-lister{
 padding: 5px;
+z-index: 2;
 }
 
 .card-hader-lister{
@@ -348,7 +371,38 @@ line-height: 123.5%;
 letter-spacing: 0.2px;
 color: #143935;
 }
+/* Catagory */
+.section-home-category-page{
+    background: #D9E8E5;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 30px;
+}
 
+.section-home-category-page .container{
+    background: #FFFFFF;
+    border-radius: 16px; 
+}
+
+.titleCatagory{
+    padding: 30px;
+}
+
+.titleCatagory h4{
+    font-family: 'Montserrat';
+font-style: normal;
+font-weight: 700;
+font-size: 42px;
+line-height: 123.5%;
+letter-spacing: 0.2px;
+color: #0A1C1A;
+}
+
+
+/* Main Contener Hide Show */
+.deactiveContainer{
+    display: none;
+}
 /* Mobile friendly  */
 
 @media screen and (max-width:600px) {
@@ -368,6 +422,10 @@ margin-right: 10px;
 
     .socials-icolisty{
         float: none;
+     }
+
+     .float-righttextop{
+        display: none;
      }
 }
 
