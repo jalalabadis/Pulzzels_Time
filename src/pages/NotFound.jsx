@@ -1,34 +1,21 @@
-import React, { useState, useEffect} from 'react'
-import { getDatabase, ref, onValue } from 'firebase/database';
+import React from 'react'
+import Hader from './../template_part/Hader';
+import Footer from './../template_part/Footer';
 
 function NotFound() {
-const [gameData, setGameData] = useState({dataBaser: []});
 
-useEffect(()=>{
-  const db = getDatabase();
-  const dbRef = (ref(db, 'Games'));
-onValue((dbRef), snapshot=>{
-  const records = [];
-snapshot.forEach(childSnapshot=>{
-const data = childSnapshot.val();
-records.push(data);
-});
 
-setGameData((gameData)=>({gameData, dataBaser: records.splice(0, 3)}));
-
-  });
-
-},[]); 
- 
   return (
     <div>
+      <Hader/>
+<div className="container">
+  <div className="error-template">
+  <h4>404 Not Found</h4>
+  </div>
 
+</div>
 
- { gameData.dataBaser.map((row, index)=>{
-      return(
-        <h1 key={index}>{row.Name}</h1>
-      )}
-    )}     
+ <Footer/>
       </div>
   )
 }
